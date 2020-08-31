@@ -24,10 +24,17 @@ $(document).ready(function(){
 $(function () {
     $(window).scroll(function () {
         const wHeight = $(window).height();
+        const wWidth = $(window).width();
         const scrollAmount = $(window).scrollTop();
+        var adj
+        if (wWidth <= 650) {
+            adj = 3200
+        } else {
+            adj = 3200
+        }
         $('.fadeIn').each(function () {
             const targetPosition = $(this).offset().top;
-            if(scrollAmount > targetPosition - wHeight + 3200) {
+            if(scrollAmount > targetPosition - wHeight + adj) {
                 $(this).addClass("animated");
             } else {
                 $(this).removeClass("animated");
