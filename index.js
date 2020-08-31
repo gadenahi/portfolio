@@ -27,7 +27,7 @@ $(function () {
         const scrollAmount = $(window).scrollTop();
         $('.fadeIn').each(function () {
             const targetPosition = $(this).offset().top;
-            if(scrollAmount > targetPosition - wHeight + 3500) {
+            if(scrollAmount > targetPosition - wHeight + 3200) {
                 $(this).addClass("animated");
             } else {
                 $(this).removeClass("animated");
