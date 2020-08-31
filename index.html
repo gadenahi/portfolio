@@ -1,12 +1,23 @@
 <html>
+
 <head>
     <title>Hideaki Portfolio</title>
     <link rel="stylesheet" type="text/css" media="screen" href="index.css">
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-127765356-3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-127765356-3');
+    </script>
     <script src="https://kit.fontawesome.com/9353b1be6e.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="index.js"></script>
 </head>
+
 <body>
     <nav id="navbar">
         <ul>
@@ -30,75 +41,61 @@
         <section id="projects">
             <h2 class='sub-title'>PROJECTS</h2>
             <div class='project fadeIn'>
-            <a href="https://gadenahi.github.io/pomodoro-clock/">
-                <img class="project-pic"
-                    src="./static/pomodoro_clock.png"
-                    alt="project-picture">
-                <div class='mask'>
-                    <div class='caption'>Pomodoro　Clock</div>
-                </div>
-            </a>
+                <a href="https://gadenahi.github.io/pomodoro-clock/">
+                    <img class="project-pic" src="./static/pomodoro_clock.png" alt="project-picture">
+                    <div class='mask'>
+                        <div class='caption'>Pomodoro　Clock</div>
+                    </div>
+                </a>
             </div>
             <div class='project fadeIn'>
-            <a href="https://gadenahi.github.io/drum-machine/">
-                <img class="project-pic"
-                    src="./static/drum_machine.png"
-                    alt="project-picture">
-                <div class='mask'>
-                    <div class='caption'>Drum Machine</div>
-                </div>
-            </a>
+                <a href="https://gadenahi.github.io/drum-machine/">
+                    <img class="project-pic" src="./static/drum_machine.png" alt="project-picture">
+                    <div class='mask'>
+                        <div class='caption'>Drum Machine</div>
+                    </div>
+                </a>
             </div>
             <div class='project fadeIn'>
-            <a href="https://gadenahi.github.io/twitch_streamers/">
-                <img class="project-pic"
-                    src="./static/twitch_streamers.png"
-                    alt="project-picture">
-                <div class='mask'>
-                    <div class='caption'>Twitch Streamers</div>
-                </div>
-            </a>
-            </div>
-            <div class='project fadeIn'>            
-            <a href="https://gadenahi.github.io/js-calculator/">
-                <img class="project-pic"
-                    src="./static/calculator.png"
-                    alt="project-picture">
-                <div class='mask'>
-                    <div class='caption'>Calculator</div>
-                </div>
-            </a>
+                <a href="https://gadenahi.github.io/twitch_streamers/">
+                    <img class="project-pic" src="./static/twitch_streamers.png" alt="project-picture">
+                    <div class='mask'>
+                        <div class='caption'>Twitch Streamers</div>
+                    </div>
+                </a>
             </div>
             <div class='project fadeIn'>
-            <a href="https://gadenahi.github.io/build_a_wikipedia_viewer/">
-                <img class="project-pic"
-                    src="./static/wikipedia_viewer.png"
-                    alt="project-picture">
-                <div class='mask'>
-                    <div class='caption'>Wikipedia Viewer</div>
-                </div>
-            </a>
+                <a href="https://gadenahi.github.io/js-calculator/">
+                    <img class="project-pic" src="./static/calculator.png" alt="project-picture">
+                    <div class='mask'>
+                        <div class='caption'>Calculator</div>
+                    </div>
+                </a>
             </div>
             <div class='project fadeIn'>
-            <a href="https://gadenahi.github.io/visualize-data-with-a-choropleth-map/">
-                <img class="project-pic"
-                    src="./static/choropleth_map.png"
-                    alt="project-picture">
-                <div class='mask'>
-                    <div class='caption'>Visualize Data with<br> a Choropleth Map</div>
-                </div>
-            </a>
+                <a href="https://gadenahi.github.io/build_a_wikipedia_viewer/">
+                    <img class="project-pic" src="./static/wikipedia_viewer.png" alt="project-picture">
+                    <div class='mask'>
+                        <div class='caption'>Wikipedia Viewer</div>
+                    </div>
+                </a>
+            </div>
+            <div class='project fadeIn'>
+                <a href="https://gadenahi.github.io/visualize-data-with-a-choropleth-map/">
+                    <img class="project-pic" src="./static/choropleth_map.png" alt="project-picture">
+                    <div class='mask'>
+                        <div class='caption'>Visualize Data with<br> a Choropleth Map</div>
+                    </div>
+                </a>
             </div>
             <div class='project fadeIn'>
                 <a href="https://gadenahi.github.io/show_the_local_weather/">
-                    <img class="project-pic"
-                        src="./static/local_weather.png"
-                        alt="project-picture">
+                    <img class="project-pic" src="./static/local_weather.png" alt="project-picture">
                     <div class='mask'>
                         <div class='caption'>Show local weather</div>
                     </div>
                 </a>
-                </div>    
+            </div>
             <!-- <a id="show_all" class="btn" href="https://codepen.io/FreeCodeCamp/">Show all</a> -->
         </section>
         <section id='Skills'>
@@ -120,127 +117,157 @@
             <div class='skill fadeIn'>mongoose</div>
             <div class='skill fadeIn'>sqlalchemy</div>
             <div class='skill fadeIn'>sql</div>
-            <div class='skill fadeIn'>d3</div>  
+            <div class='skill fadeIn'>d3</div>
             <div class='skill fadeIn'>selenium</div>
             <div class='skill fadeIn'>pandas</div>
             <div class='skill fadeIn'>numpy</div>
             <div class='skill fadeIn'>matplotlib</div>
-            <div class='skill fadeIn'>seaborn</div>                    
+            <div class='skill fadeIn'>seaborn</div>
             <div class='skill fadeIn'>scikit-learn</div>
             <div class='skill fadeIn'>tensorflow</div>
-            <div class='skill fadeIn'>chai</div>                        
-            <div class='skill fadeIn'>helmetjs</div>      
+            <div class='skill fadeIn'>chai</div>
+            <div class='skill fadeIn'>helmetjs</div>
             <div class='skill fadeIn'>npm</div>
             <div class='skill fadeIn'>github</div>
-            <div class='skill fadeIn'>jupyter notebooks</div>   
-            <div class='skill fadeIn'>responsive web design</div>       
+            <div class='skill fadeIn'>jupyter notebooks</div>
+            <div class='skill fadeIn'>responsive web design</div>
         </section>
         <section id='Certificates'>
             <h2 class='sub-title'>Certificates</h2>
-            <a class="certificate fadeIn ibm" href="https://credentials.edx.org/credentials/d01d1b57330e483da5f6994e03d83b59/">
+            <a class="certificate fadeIn ibm"
+                href="https://credentials.edx.org/credentials/d01d1b57330e483da5f6994e03d83b59/">
                 Professional Certificate, IBM Data Science(2020)
             </a>
-            <a class="certificate fadeIn ibm" href="https://credentials.edx.org/credentials/098b574700d74432a9fb997f638bc2d2/">
+            <a class="certificate fadeIn ibm"
+                href="https://credentials.edx.org/credentials/098b574700d74432a9fb997f638bc2d2/">
                 Professional Certificate, Python Data Science(2020)
             </a>
-            <a class="certificate fadeIn ibm" href="https://credentials.edx.org/credentials/250f5dafb0de40efbbf013a5b3c9f029/">
+            <a class="certificate fadeIn ibm"
+                href="https://credentials.edx.org/credentials/250f5dafb0de40efbbf013a5b3c9f029/">
                 Professional Certificate, Data Science Foundations(2020)
             </a>
-            <a class="certificate fadeIn ibm" href="https://courses.edx.org/certificates/8b5ac79a2f7f4c2aa4321aaaafd63978">
+            <a class="certificate fadeIn ibm"
+                href="https://courses.edx.org/certificates/8b5ac79a2f7f4c2aa4321aaaafd63978">
                 IBM Python Basics for Data Science(2020)
             </a>
-            <a class="certificate fadeIn ibm" href="https://courses.edx.org/certificates/3532cb2223064903a9d17f8dd42689ea">
+            <a class="certificate fadeIn ibm"
+                href="https://courses.edx.org/certificates/3532cb2223064903a9d17f8dd42689ea">
                 IBM Introduction to Data Science(2020)
             </a>
-            <a class="certificate fadeIn ibm" href="https://courses.edx.org/certificates/3fe7e50b826e43819967cb9e396d1c60">
+            <a class="certificate fadeIn ibm"
+                href="https://courses.edx.org/certificates/3fe7e50b826e43819967cb9e396d1c60">
                 IBM Data Science Tools(2020)
             </a>
-            <a class="certificate fadeIn ibm" href="https://courses.edx.org/certificates/1ff7eeb05c2b4a2cbd0cdd6e0a53eadd">
+            <a class="certificate fadeIn ibm"
+                href="https://courses.edx.org/certificates/1ff7eeb05c2b4a2cbd0cdd6e0a53eadd">
                 IBM SQL for Data Science(2020)
             </a>
-            <a class="certificate fadeIn ibm" href="https://courses.edx.org/certificates/cb8b4838ab134544a3fbe50c1da0f51b">
+            <a class="certificate fadeIn ibm"
+                href="https://courses.edx.org/certificates/cb8b4838ab134544a3fbe50c1da0f51b">
                 IBM Analyzing Data with Python(2020)
             </a>
-            <a class="certificate fadeIn ibm" href="https://courses.edx.org/certificates/267aa2a9f531413fab0dcbfab74bcc57">
+            <a class="certificate fadeIn ibm"
+                href="https://courses.edx.org/certificates/267aa2a9f531413fab0dcbfab74bcc57">
                 IBM The Data Science Method(2020)
             </a>
-            <a class="certificate fadeIn ibm" href="https://courses.edx.org/certificates/a3a26fdc1396427ba447ee7a0ccb4575">
+            <a class="certificate fadeIn ibm"
+                href="https://courses.edx.org/certificates/a3a26fdc1396427ba447ee7a0ccb4575">
                 IBM Visualizing Data with Python(2020)
             </a>
-            <a class="certificate fadeIn ibm" href="https://courses.edx.org/certificates/954133c3694644c5ba72f8bf2a6de822">
+            <a class="certificate fadeIn ibm"
+                href="https://courses.edx.org/certificates/954133c3694644c5ba72f8bf2a6de822">
                 IBM Machine Learning with Python(2020)
             </a>
-            <a class="certificate fadeIn ibm" href="https://courses.edx.org/certificates/2f099642be0341ee8eb6ddfc9826d8ed">
+            <a class="certificate fadeIn ibm"
+                href="https://courses.edx.org/certificates/2f099642be0341ee8eb6ddfc9826d8ed">
                 IBM Data Science and MachineLearning Capstone Project(2020)
             </a>
-            <a class="certificate fadeIn fcc" href="https://www.freecodecamp.org/certification/fccc534cca9-a8ea-423c-ac32-350f031d7082/full-stack">
+            <a class="certificate fadeIn fcc"
+                href="https://www.freecodecamp.org/certification/fccc534cca9-a8ea-423c-ac32-350f031d7082/full-stack">
                 FCC Full Stack Web Developer(2019)
             </a>
-            <a class="certificate fadeIn fcc" href="https://www.freecodecamp.org/certification/fccc534cca9-a8ea-423c-ac32-350f031d7082/responsive-web-design">
+            <a class="certificate fadeIn fcc"
+                href="https://www.freecodecamp.org/certification/fccc534cca9-a8ea-423c-ac32-350f031d7082/responsive-web-design">
                 FCC Responsive Web Design(2019)
             </a>
-            <a class="certificate fadeIn fcc" href="https://www.freecodecamp.org/certification/fccc534cca9-a8ea-423c-ac32-350f031d7082/javascript-algorithms-and-data-structures">
+            <a class="certificate fadeIn fcc"
+                href="https://www.freecodecamp.org/certification/fccc534cca9-a8ea-423c-ac32-350f031d7082/javascript-algorithms-and-data-structures">
                 FCC JS Algorithms and Data Structures(2019)
             </a>
-            <a class="certificate fadeIn fcc" href="https://www.freecodecamp.org/certification/fccc534cca9-a8ea-423c-ac32-350f031d7082/front-end-libraries">
+            <a class="certificate fadeIn fcc"
+                href="https://www.freecodecamp.org/certification/fccc534cca9-a8ea-423c-ac32-350f031d7082/front-end-libraries">
                 FCC Front End Libraries(2019)
-            </a>            
-            <a class="certificate fadeIn fcc" href="https://www.freecodecamp.org/certification/fccc534cca9-a8ea-423c-ac32-350f031d7082/data-visualization">
+            </a>
+            <a class="certificate fadeIn fcc"
+                href="https://www.freecodecamp.org/certification/fccc534cca9-a8ea-423c-ac32-350f031d7082/data-visualization">
                 FCC Data Visualization(2019)
-            </a>            
-            <a class="certificate fadeIn fcc" href="https://www.freecodecamp.org/certification/fccc534cca9-a8ea-423c-ac32-350f031d7082/apis-and-microservices">
+            </a>
+            <a class="certificate fadeIn fcc"
+                href="https://www.freecodecamp.org/certification/fccc534cca9-a8ea-423c-ac32-350f031d7082/apis-and-microservices">
                 FCC APIs and Microservices(2019)
-            </a>            
-            <a class="certificate fadeIn fcc" href="https://www.freecodecamp.org/certification/fccc534cca9-a8ea-423c-ac32-350f031d7082/quality-assurance-v7">
+            </a>
+            <a class="certificate fadeIn fcc"
+                href="https://www.freecodecamp.org/certification/fccc534cca9-a8ea-423c-ac32-350f031d7082/quality-assurance-v7">
                 FCC Quality Assuarance(2020)
-            </a>            
-            <a class="certificate fadeIn fcc" href="https://www.freecodecamp.org/certification/fccc534cca9-a8ea-423c-ac32-350f031d7082/information-security-v7">
+            </a>
+            <a class="certificate fadeIn fcc"
+                href="https://www.freecodecamp.org/certification/fccc534cca9-a8ea-423c-ac32-350f031d7082/information-security-v7">
                 FCC Information Security(2020)
-            </a>            
-            <a class="certificate fadeIn fcc" href="https://www.freecodecamp.org/certification/fccc534cca9-a8ea-423c-ac32-350f031d7082/scientific-computing-with-python-v7">
+            </a>
+            <a class="certificate fadeIn fcc"
+                href="https://www.freecodecamp.org/certification/fccc534cca9-a8ea-423c-ac32-350f031d7082/scientific-computing-with-python-v7">
                 FCC Scientific Computing with Python(2020)
-            </a>            
-            <a class="certificate fadeIn fcc" href="https://www.freecodecamp.org/certification/fccc534cca9-a8ea-423c-ac32-350f031d7082/data-analysis-with-python-v7">
+            </a>
+            <a class="certificate fadeIn fcc"
+                href="https://www.freecodecamp.org/certification/fccc534cca9-a8ea-423c-ac32-350f031d7082/data-analysis-with-python-v7">
                 FCC Data Analysis with Python(2020)
-            </a>            
-            <a class="certificate fadeIn fcc" href="https://www.freecodecamp.org/certification/fccc534cca9-a8ea-423c-ac32-350f031d7082/machine-learning-with-python-v7">
+            </a>
+            <a class="certificate fadeIn fcc"
+                href="https://www.freecodecamp.org/certification/fccc534cca9-a8ea-423c-ac32-350f031d7082/machine-learning-with-python-v7">
                 FCC Machine Learning with Python(2020)
-            </a>            
-            <a class="certificate fadeIn fcc" href="https://www.freecodecamp.org/certification/fccc534cca9-a8ea-423c-ac32-350f031d7082/information-security-and-quality-assurance">
+            </a>
+            <a class="certificate fadeIn fcc"
+                href="https://www.freecodecamp.org/certification/fccc534cca9-a8ea-423c-ac32-350f031d7082/information-security-and-quality-assurance">
                 FCC Infromation Security and Quality Assurance(2019)
-            </a>            
-            <a class="certificate fadeIn google" href="https://www.coursera.org/account/accomplishments/specialization/certificate/F38Q8LMHV5TL">
+            </a>
+            <a class="certificate fadeIn google"
+                href="https://www.coursera.org/account/accomplishments/specialization/certificate/F38Q8LMHV5TL">
                 Google From Data to Insights with Google Cloud Platform(2020)
-            </a>       
-            <a class="certificate fadeIn google" href="https://www.coursera.org/account/accomplishments/certificate/L2TV2QZNRXVA">
+            </a>
+            <a class="certificate fadeIn google"
+                href="https://www.coursera.org/account/accomplishments/certificate/L2TV2QZNRXVA">
                 Google Exploring and Preparing your Data with BigQuery(2020)
-            </a>    
-            <a class="certificate fadeIn google" href="https://www.coursera.org/account/accomplishments/certificate/ZTPBMTNFLWEY">
+            </a>
+            <a class="certificate fadeIn google"
+                href="https://www.coursera.org/account/accomplishments/certificate/ZTPBMTNFLWEY">
                 Google Creating New BgiQuery Datasets and Visualizing Insights(2020)
-            </a>    
-            <a class="certificate fadeIn google" href="https://www.coursera.org/account/accomplishments/certificate/GJ5VKF2KYNA9">
+            </a>
+            <a class="certificate fadeIn google"
+                href="https://www.coursera.org/account/accomplishments/certificate/GJ5VKF2KYNA9">
                 Google Achieving Advanced Insights with BigQuery(2020)
-            </a>    
-            <a class="certificate fadeIn google" href="https://www.coursera.org/account/accomplishments/certificate/232H7CKCYK7W">
+            </a>
+            <a class="certificate fadeIn google"
+                href="https://www.coursera.org/account/accomplishments/certificate/232H7CKCYK7W">
                 Google Applying Machine Learning to your Data with GCP(2020)
-            </a>    
-            <a class="certificate fadeIn google" href="https://www.coursera.org/account/accomplishments/certificate/RB5TLSQR7MAH">
+            </a>
+            <a class="certificate fadeIn google"
+                href="https://www.coursera.org/account/accomplishments/certificate/RB5TLSQR7MAH">
                 Google Fundamentals for Azure Professionals: Core Infrastructure(2020)
-            </a>    
-
+            </a>
         </section>
         <section id="Contact">
             <h2 class='sub-title'>About</h2>
             <div id="profile-explanation">
-            <p class='fadeIn'>I am a software Engineer having a customer first mind with the background</p>
-            <p class='fadeIn'>of the multiple customer facing roles of Product Management, Product Marketing</p>
-            <p class='fadeIn'>New Business Development and System Engineer. Let's enjoying and challenging</p>
-            <p class='fadeIn'>Software Development with me</p>
+                <p class='fadeIn'>I am a software Engineer having a customer first mind with the background</p>
+                <p class='fadeIn'>of the multiple customer facing roles of Product Management, Product Marketing</p>
+                <p class='fadeIn'>New Business Development and System Engineer. Let's enjoying and challenging</p>
+                <p class='fadeIn'>Software Development with me</p>
             </div>
             <a class='fadeIn'><img src="./static/test.png" alt="about-photo"></a>
             <p class='fadeIn'>Please contact</p>
             <a href="https://github.com/gadenahi"><img src="./static/GitHub-Mark-64px.png" alt="Github"></a>
-            <a href="https://www.linkedin.com/in/hideaki-nagaya/"><img src="./static/LI-In-Bug.png" alt="Linkedin"　width="64" height="64"></a>
+            <a href="https://www.linkedin.com/in/hideaki-nagaya/"><img src="./static/LI-In-Bug.png" alt="Linkedin"
+                    　width="64" height="64"></a>
         </section>
     </main>
     <footer>

@@ -1,15 +1,15 @@
 $(document).ready(function(){
-  var DELAY_SPEED = 100;//文字が流れる速さ
-  var FADE_SPEED = 500;//文字のフェードインの速さ
+  var DELAY_SPEED = 100;
+  var FADE_SPEED = 500;
   var str = [];
-  $('#welcome-section > span').each(function(i){//セレクタで指定した要素すべて
-      $(this).css('opacity','1');//行を不透明にする
-      str[i] = $(this).text();//元のテキストをコピーし
-      $(this).text('');//テキストを消す
+  $('#welcome-section > span').each(function(i){
+      $(this).css('opacity','1');
+      str[i] = $(this).text();
+      $(this).text('');
       var no = i;
       var self = this;
       var interval = setInterval(function(){
-          if(no == 0 || $('#welcome-section > span').eq(no - 1).children('span:last').css('opacity') == 1){//最初の要素または前の要素が全文字表示された時
+          if(no == 0 || $('#welcome-section > span').eq(no - 1).children('span:last').css('opacity') == 1){
               clearInterval(interval);
               for (var j = 0; j < str[no].length; j++) {
                   $(self).append('<span>'+str[no].substr(j, 1)+'</span>'); 
@@ -23,14 +23,16 @@ $(document).ready(function(){
 
 $(function () {
     $(window).scroll(function () {
-        const wHeight = $(window).height();
+        const wHeight = $(window).innerHeight();
+        // const wHeight = $(window).height();
         const wWidth = $(window).width();
         const scrollAmount = $(window).scrollTop();
+        console.log(wHeight)
         var adj
         if (wWidth <= 650) {
-            adj = 3200
+            adj = 5500
         } else {
-            adj = 3200
+            adj = 3700
         }
         $('.fadeIn').each(function () {
             const targetPosition = $(this).offset().top;

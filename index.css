@@ -235,6 +235,10 @@ footer a {
   #navbar a {
     margin: 0 auto;
   }
+  #welcome-section {
+    padding-top: 10vh;
+    min-height: 15vh;
+  }
   #welcome-section span{
       font-size: 24px;
   }
