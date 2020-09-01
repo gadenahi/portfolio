@@ -30,9 +30,9 @@ $(function () {
         console.log(wHeight)
         var adj
         if (wWidth <= 650) {
-            adj = 5500
+            adj = 8400
         } else {
-            adj = 3700
+            adj = 4400
         }
         $('.fadeIn').each(function () {
             const targetPosition = $(this).offset().top;
