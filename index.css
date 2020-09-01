@@ -217,7 +217,7 @@ footer a {
   color: white;
 }
 
-.fadeIn {
+/* .fadeIn {
   transform: translate3d(0, -10px, 0);
   transition: 1s;
   opacity: 0;
@@ -226,7 +226,7 @@ footer a {
 .fadeIn.animated {
   transform: translate3d(0, 0, 0);
   opacity: 1;
-}
+} */
 
 @media (max-width: 650px){
   #navbar {

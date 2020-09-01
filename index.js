@@ -21,26 +21,36 @@ $(document).ready(function(){
   });
 });
 
+// $(function () {
+//     $(window).scroll(function () {
+//         const wHeight = $(window).innerHeight();
+//         // const wHeight = $(window).height();
+//         const wWidth = $(window).width();
+//         const scrollAmount = $(window).scrollTop();
+//         console.log(wHeight)
+//         var adj
+//         if (wWidth <= 650) {
+//             adj = 8400
+//         } else {
+//             adj = 4400
+//         }
+//         $('.fadeIn').each(function () {
+//             const targetPosition = $(this).offset().top;
+//             if(scrollAmount > targetPosition - wHeight + adj) {
+//                 $(this).addClass("animated");
+//             } else {
+//                 $(this).removeClass("animated");
+//             }
+//         });
+//     });
+// });
+
+
+var animation= {
+    delay: 200, //アニメーションの発生タイミング
+    distance: '200px', //要素の移動距離
+    origin: 'bottom' //要素が移動してくる方向
+};
 $(function () {
-    $(window).scroll(function () {
-        const wHeight = $(window).innerHeight();
-        // const wHeight = $(window).height();
-        const wWidth = $(window).width();
-        const scrollAmount = $(window).scrollTop();
-        console.log(wHeight)
-        var adj
-        if (wWidth <= 650) {
-            adj = 8400
-        } else {
-            adj = 4400
-        }
-        $('.fadeIn').each(function () {
-            const targetPosition = $(this).offset().top;
-            if(scrollAmount > targetPosition - wHeight + adj) {
-                $(this).addClass("animated");
-            } else {
-                $(this).removeClass("animated");
-            }
-        });
-    });
-});
+    ScrollReveal({reset:true, moblie:true}).reveal('.fadeIn', animation);
+})
