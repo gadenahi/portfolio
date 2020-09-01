@@ -1,56 +1,38 @@
-$(document).ready(function(){
-  var DELAY_SPEED = 100;
-  var FADE_SPEED = 500;
-  var str = [];
-  $('#welcome-section > span').each(function(i){
-      $(this).css('opacity','1');
-      str[i] = $(this).text();
-      $(this).text('');
-      var no = i;
-      var self = this;
-      var interval = setInterval(function(){
-          if(no == 0 || $('#welcome-section > span').eq(no - 1).children('span:last').css('opacity') == 1){
-              clearInterval(interval);
-              for (var j = 0; j < str[no].length; j++) {
-                  $(self).append('<span>'+str[no].substr(j, 1)+'</span>'); 
-                  $(self).children('span:last').delay(DELAY_SPEED * j).animate({opacity:'1'}, FADE_SPEED);
-              }
-              $(self).append('</br></br>'); 
-          }
-      }, 50);
-  });
+$(document).ready(function () {
+    var DELAY_SPEED = 100;
+    var FADE_SPEED = 500;
+    var str = [];
+    $('#welcome-section > span').each(function (i) {
+        $(this).css('opacity', '1');
+        str[i] = $(this).text();
+        $(this).text('');
+        var no = i;
+        var self = this;
+        var interval = setInterval(function () {
+            if (no == 0 || $('#welcome-section > span').eq(no - 1).children('span:last').css('opacity') == 1) {
+                clearInterval(interval);
+                for (var j = 0; j < str[no].length; j++) {
+                    $(self).append('<span>' + str[no].substr(j, 1) + '</span>');
+                    $(self).children('span:last').delay(DELAY_SPEED * j).animate({ opacity: '1' }, FADE_SPEED);
+                }
+                $(self).append('</br></br>');
+            }
+        }, 50);
+    });
+
+    $(".navbar-nav li a").click(function (event) {
+        $(".navbar-collapse").collapse('hide');
+    })
+
 });
 
-// $(function () {
-//     $(window).scroll(function () {
-//         const wHeight = $(window).innerHeight();
-//         // const wHeight = $(window).height();
-//         const wWidth = $(window).width();
-//         const scrollAmount = $(window).scrollTop();
-//         console.log(wHeight)
-//         var adj
-//         if (wWidth <= 650) {
-//             adj = 8400
-//         } else {
-//             adj = 4400
-//         }
-//         $('.fadeIn').each(function () {
-//             const targetPosition = $(this).offset().top;
-//             if(scrollAmount > targetPosition - wHeight + adj) {
-//                 $(this).addClass("animated");
-//             } else {
-//                 $(this).removeClass("animated");
-//             }
-//         });
-//     });
-// });
-
-
-var animation= {
-    delay: 200, //アニメーションの発生タイミング
-    distance: '200px', //要素の移動距離
-    origin: 'bottom' //要素が移動してくる方向
+var animation = {
+    delay: 200,
+    distance: '200px',
+    origin: 'bottom'
 };
 $(function () {
-    ScrollReveal({reset:true, moblie:true}).reveal('.fadeIn', animation);
+    ScrollReveal({ reset: true, moblie: true }).reveal('.fadeIn', animation);
 })
+
+

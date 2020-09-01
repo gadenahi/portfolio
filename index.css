@@ -3,25 +3,25 @@ body {
     margin-top: 0px;
 }
 
-/* .navbar {
-    display: flex;
-    overflow: hidden;
+#navbar {
     width: 100%;
-    justify-content: flex-end;
     position: fixed;
     background-color:#F8F8F8;
-} */
-  
-/* .navbar li {
-    list-style: none;
-    font-family: Helvetica;
-    font-weight: bold;
-    color: darkblue;
-} */
-  
+    z-index:9998;
+}
+
+#responsiveMenu a{
+  color: darkblue;
+  font-family: Helvetica;
+  font-weight: bold;
+}
+
+#responsiveMenu ul{
+  margin-left:auto;
+}
 
 #welcome-section {
-    padding-top: 30vh;
+    padding-top: 20vh;
     min-height: 55vh;
     text-align: center;
     background-color: #e0ebe8;
@@ -223,28 +223,7 @@ footer a {
   color: white;
 }
 
-/* .fadeIn {
-  transform: translate3d(0, -10px, 0);
-  transition: 1s;
-  opacity: 0;
-}
-
-.fadeIn.animated {
-  transform: translate3d(0, 0, 0);
-  opacity: 1;
-} */
-
 @media (max-width: 500px){
-  /* nav {
-    justify-content: center;
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    margin: 0 auto;
-  }
-  nav a {
-    max-width: 100%;
-  } */
   #welcome-section {
     padding-top: 20vh;
     min-height: 15vh;
@@ -258,7 +237,7 @@ footer a {
     font-size: 24px;
   }
   #projects{
-    padding-top: 0px;
+    padding-top: 10px;
     max-width: 100%;
     width: 100%;
     margin-left: auto;
@@ -266,7 +245,8 @@ footer a {
   }
   .project {
     margin: 10px auto;
-    max-width: 100%
+    max-width: 95%;
+    width: 95%;
   }
   .sub-title{
     font-size: 24px;
@@ -283,8 +263,6 @@ footer a {
   }
   .skill {
     width: 150px;
-
-
   }  
   #certificates{
     width: 100%;
