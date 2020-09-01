@@ -3,28 +3,23 @@ body {
     margin-top: 0px;
 }
 
-#navbar {
+/* .navbar {
     display: flex;
     overflow: hidden;
     width: 100%;
     justify-content: flex-end;
     position: fixed;
     background-color:#F8F8F8;
-}
+} */
   
-#navbar a{
-    /* text-decoration: none; */
-    display: inline-block;
-    margin: 0 50px;
-}
-  
-#navbar a li {
+/* .navbar li {
     list-style: none;
     font-family: Helvetica;
     font-weight: bold;
     color: darkblue;
-}
+} */
   
+
 #welcome-section {
     padding-top: 30vh;
     min-height: 55vh;
@@ -239,31 +234,99 @@ footer a {
   opacity: 1;
 } */
 
-@media (max-width: 650px){
-  #navbar {
+@media (max-width: 500px){
+  /* nav {
     justify-content: center;
-  }
-  #navbar a {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
     margin: 0 auto;
   }
+  nav a {
+    max-width: 100%;
+  } */
   #welcome-section {
     padding-top: 20vh;
     min-height: 15vh;
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
   }
   #welcome-section span{
-      font-size: 24px;
+    font-size: 24px;
   }
   #projects{
-      padding-top: 0px;
+    padding-top: 0px;
+    max-width: 100%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
   }
   .project {
-      margin: 10px auto;
+    margin: 10px auto;
+    max-width: 100%
   }
   .sub-title{
-      font-size: 24px;
+    font-size: 24px;
   }
   .project .caption {
-      font-size: 16px;
-      padding-top: 150px;
-  }  
+    font-size: 16px;
+    padding-top: 150px;
+  }
+  #skills{
+    width: 100%;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #certificates{
+    width: 100%;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .certificate{
+    width: 95%;
+    max-width: 195%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 14px;
+  }
+  #contact {
+    width: 100%;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #profile {
+    display: block;
+  }
+  #contact #profile-explanation {
+    /* margin-top: -20px; */
+    width: 95%;
+    max-width: 95%;
+    margin-left: auto;
+    margin-right: auto;    
+  }
+  
+  #contact #profile-photo {
+    width: 90%;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #contact #profile-photo img{
+    width: 60%;
+    max-width: 60%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  footer {
+    width: 100%;
+    max-width: 100%;
+  }
 }

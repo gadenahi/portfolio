@@ -6,7 +6,7 @@
     <title>Hideaki Portfolio</title>
     <link rel="stylesheet" type="text/css" media="screen" href="index.css">
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
-    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">    <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-127765356-3"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -22,22 +22,35 @@
 </head>
 
 <body>
-    <nav id="navbar">
-        <ul>
-            <a class="nav-link" href="#projects">
-                <li>Projects</li>
-            </a>
-            <a class="nav-link" href="#skills">
-                <li>Skills</li>
-            </a>
-            <a class="nav-link" href="#certificates">
-                <li>Certificates</li>
-            </a>
-            <a class="nav-link" href="#contact">
-                <li>About</li>
-            </a>
-        </ul>
-    </nav>
+    <nav class="navbar navbar-light navbar-expand-sm">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#responsiveMenu" aria-controls="responsiveMenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="responsiveMenu">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#projects">
+                        <li>Projects</li>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#skills">
+                        <li>Skills</li>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#certificates">
+                        <li>Certificates</li>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">
+                        <li>About</li>
+                    </a>
+                </li>
+            </ul>
+        </div>
+      </nav>
     <main id="main">
         <section id="welcome-section">
             <span id="welcome-hello">Hello Everyone</span>
@@ -343,5 +356,6 @@
         <p>Inspired by Hideaki Nagaya</p>
     </footer>
 </body>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </html>
