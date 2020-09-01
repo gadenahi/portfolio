@@ -13,7 +13,7 @@ body {
 }
   
 #navbar a{
-    text-decoration: none;
+    /* text-decoration: none; */
     display: inline-block;
     margin: 0 50px;
 }
