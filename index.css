@@ -220,6 +220,109 @@ footer a {
   color: white;
 }
 
+
+@media (max-width: 770px){
+  #welcome-section {
+    padding-top: 20vh;
+    min-height: 15vh;
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #welcome-section span{
+    font-size: 24px;
+  }
+
+  #projects{
+    padding-top: 10px;
+    max-width: 100%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .project {
+    margin: 10px auto;
+    width: 45%;
+  }
+
+  .sub-title{
+    font-size: 24px;
+  }
+
+  .project .caption {
+    font-size: 16px;
+    padding-top: 150px;
+  }
+
+  #skills{
+    width: 100%;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .skill {
+    width: 150px;
+  }
+
+  #certificates{
+    width: 100%;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .certificate{
+    width: 95%;
+    max-width: 195%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 14px;
+  }
+
+  #contact {
+    width: 100%;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #profile {
+    display: block;
+  }
+
+  #contact #profile-explanation {
+    width: 95%;
+    max-width: 95%;
+    margin-left: auto;
+    margin-right: auto;    
+  }
+  
+  #contact #profile-photo {
+    width: 90%;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #contact #profile-photo img{
+    width: 60%;
+    max-width: 60%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  footer {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
 @media (max-width: 500px){
   #welcome-section {
     padding-top: 20vh;
@@ -245,8 +348,8 @@ footer a {
 
   .project {
     margin: 10px auto;
-    max-width: 95%;
-    width: 95%;
+    max-width: 90%;
+    width: 90%;
   }
 
   .sub-title{
