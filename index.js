@@ -24,15 +24,16 @@ $(document).ready(function () {
         $(".navbar-collapse").collapse('hide');
     })
 
+    var animation = {
+        delay: 200,
+        distance: '200px',
+        origin: 'bottom'
+    };
+    $(function () {
+        ScrollReveal({ reset: true, moblie: true }).reveal('.fadeIn', animation);
+    })
 });
 
-var animation = {
-    delay: 200,
-    distance: '200px',
-    origin: 'bottom'
-};
-$(function () {
-    ScrollReveal({ reset: true, moblie: true }).reveal('.fadeIn', animation);
-})
+
 
 
