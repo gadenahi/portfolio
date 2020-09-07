@@ -22,7 +22,7 @@ body {
 
 #welcome-section {
   padding-top: 20vh;
-  min-height: 55vh;
+  min-height: 620px;
   text-align: center;
   background-color: #e0ebe8;
 }
@@ -38,6 +38,37 @@ body {
 #welcome-section p {
   margin-top: -10px;
   opacity: 0;
+}
+
+.project-btns {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  width: 800px;
+  margin-left:auto;
+  margin-right: auto;
+}
+
+.project-filter {
+  color: white;
+  background-color:darkblue;
+  border-radius: 5px;
+  border: darkblue;
+  padding: 3px 10px;
+  margin-top:20px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.project-filter:hover {
+  color: black;
+  background-color: cyan;
+  border: cyan;
+}
+
+.project-filter:focus {
+  color: black;
+  background-color: cyan;
+  border: cyan;
 }
   
 #projects{
@@ -162,6 +193,7 @@ body {
   border-radius: 10px;
   box-shadow: 3px 3px rgba(0, 0, 0, 0.25);
 }  
+
 .certificate:hover {
   background-color: darkblue;
 }
@@ -220,6 +252,18 @@ footer a {
   color: white;
 }
 
+@keyframes zoom-in {
+  0% {
+   transform: scale(.1);
+  }
+  100% {
+    transform: none;
+  }
+}
+ 
+.animate {
+  animation: .8s zoom-in;
+}
 
 @media (max-width: 770px){
   #welcome-section {
@@ -236,6 +280,13 @@ footer a {
     font-size: 24px;
   }
 
+  .project-btns {
+    max-width: 100%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;    
+  }
+
   #projects{
     padding-top: 10px;
     max-width: 100%;
@@ -244,9 +295,13 @@ footer a {
     margin-right: auto;
   }
 
+  .project-filter {
+    margin-top: 10px;
+  }
+  
   .project {
     margin: 10px auto;
-    width: 45%;
+    width: 65%;
   }
 
   .sub-title{
@@ -344,6 +399,17 @@ footer a {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .project-btns {
+    max-width: 80%;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;    
+  }
+
+  .project-filter {
+    margin-top: 10px;
   }
 
   .project {
