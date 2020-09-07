@@ -1,4 +1,4 @@
-const project_filters = ["all", "python", "flask", "javascript", "node", "express", "jquery", "react", "d3", "postgresql", "datascience", "jupyternotebooks"]
+const project_filters = ["all", "python", "flask", "javascript", "node", "express", "jquery", "react", "d3", "postgresql", "chai", "matplotlib", "scipy", "scikitlearn", "tensorflow", "datascience", "jupyternotebooks"]
 
 const projects = [
     {
@@ -6,7 +6,7 @@ const projects = [
         url: "https://docmanage111.herokuapp.com/",
         image: "./static/report_shopping_site.png",
         caption: "Report shopping site",
-        langs: ["python", "flask", "javascript", "jquery", "postgresql"]
+        langs: ["python", "flask", "javascript", "jquery", "postgresql", "matplotlib"]
     },
     {
         id: 20,
@@ -20,63 +20,63 @@ const projects = [
         url: "https://highlevelwingedcloudcomputing--five-nine.repl.co/",
         image: "./static/American_british_english_translator.png",
         caption: "American/British\nEnglish Translator",
-        langs: ["javascript", "node", "jquery", "express"]
+        langs: ["javascript", "node", "jquery", "express", "chai"]
     },
     {
         id: 18,
         url: "https://dataplatform.cloud.ibm.com/analytics/notebooks/v2/0e4e40b8-806a-4ff9-a870-dce50ffb78fe/view?access_token=5405e90fef91dc0e596e9949b87b54dfbd0ba201c0157cc45e9ca01f11a35788",
         image: "./static/ds_ml_capstone project.png",
         caption: "Data Science\nMachine Learning\nCapstone Project",
-        langs: ["python", "datascience"]
+        langs: ["python", "matplotlib", "scipy", "scikitlearn", "datascience"]
     },
     {
         id: 17,
         url: "https://github.com/gadenahi/neural_network_sms_text_classifier/blob/master/sms_text_classification.ipynb",
         image: "./static/sms_text_classification.png",
         caption: "Neural Network\nSMS Text Classifier",
-        langs: ["python", "datascience", "jupyternotebooks"]
+        langs: ["python", "matplotlib", "tensorflow", "datascience", "jupyternotebooks"]
     },
     {
         id: 16,
         url: "https://github.com/gadenahi/predict_healthcare_costs_using_a_regression_algorithm/blob/master/predict_health_costs_with_regression.ipynb",
         image: "./static/predict_healthcare_costs.png",
         caption: "Predict Healthcare_costs\nRegression Algorithm",
-        langs: ["python", "datascience", "jupyternotebooks"]
+        langs: ["python", "matplotlib", "tensorflow", "datascience", "jupyternotebooks"]
     },
     {
         id: 15,
         url: "https://github.com/gadenahi/book_recommendation_knn/blob/master/book_recommendation_knn.ipynb",
         image: "./static/book_recommendation_knn.png",
         caption: "Book recommendation\nK-Nearest Neighbors",
-        langs: ["python", "datascience", "jupyternotebooks"]
+        langs: ["python", "matplotlib", "scipy", "scikitlearn", "datascience", "jupyternotebooks"]
     },
     {
         id: 14,
         url: "https://github.com/gadenahi/cat_dog_image_classifier/blob/master/cat_dog_image_classifier.ipynb",
         image: "./static/cat_dog_image_classifier.png",
         caption: "Cat/Dog Image Classifier",
-        langs: ["python", "datascience", "jupyternotebooks"]
+        langs: ["python", "matplotlib", "tensorflow", "datascience", "jupyternotebooks"]
     },
     {
         id: 13,
         url: "https://github.com/gadenahi/sea_level_predictor",
         image: "./static/sea_level_plot.png",
         caption: "Sea Level Predictor",
-        langs: ["python", "datascience"]
+        langs: ["python", "matplotlib", "scipy", "datascience"]
     },
     {
         id: 12,
         url: "https://github.com/gadenahi/page_view_time_visualizer",
         image: "./static/page_view_visualizer_box_plot.png",
         caption: "Page View Time Visualizer",
-        langs: ["python", "datascience"]
+        langs: ["python", "matplotlib", "datascience"]
     },
     {
         id: 11,
         url: "https://reasonablewobblyfolders--five-nine.repl.co/",
         image: "./static/sudoku_solver.png",
         caption: "Sudoku Solver",
-        langs: ["javascript", "node", "jquery", "express"]
+        langs: ["javascript", "node", "jquery", "express", "chai"]
     },
     {
         id: 10,
@@ -150,7 +150,7 @@ const projects = [
     }
 ]
 
-const skills = ["python", "flask", "javascript", "react", "redux", "node", "express", "jquery", "html", "css", "scss", "bootstrap", "mongodb", "postgresql", "mongoose", "sqlalchemy", "sql", "d3", "selenium", "pandas", "numpy", "matplotlib", "seaborn", "scikit-learn", "tensorflow", "chai", "helmetjs", "npm", "github", "jupyter notebooks", "responsive web design"]
+const skills = ["python", "flask", "javascript", "react", "redux", "node", "express", "jquery", "html", "css", "scss", "bootstrap", "mongodb", "postgresql", "mongoose", "sqlalchemy", "sql", "d3", "selenium", "pandas", "numpy", "matplotlib", "seaborn", "scipy", "scikit-learn", "tensorflow", "chai", "helmetjs", "npm", "github", "jupyter notebooks", "responsive web design"]
 
 // show each word in the welcome section
 $(document).ready(function () {
@@ -219,9 +219,7 @@ $(document).ready(function () {
 
     
     // filter function
-    var $btn = $('.project-btns [data-filter]'),
-        $list = $('.project [data-category]');
-    console.log($list)
+    var $btn = $('.project-filter')
      
     $btn.on('click', function(e) {
       e.preventDefault();

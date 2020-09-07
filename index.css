@@ -195,7 +195,9 @@ body {
 }  
 
 .certificate:hover {
-  background-color: darkblue;
+  background-color: cyan;
+  text-decoration: none;
+  color:black;
 }
 
 .ibm {
