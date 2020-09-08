@@ -1,10 +1,29 @@
 import { project_filters, projects, skills } from './data.js'
 
 // show each word in the welcome section
+
 $(document).ready(function () {
     var DELAY_SPEED = 50;
     var FADE_SPEED = 100;
     var str = [];
+    var myColTbl = ["#FF0000","#0000FF","#00FF00","#FF00FF","#00FFFF","#FFFF00","#000000","#FFFFFF"]
+    var myColCnt = 0;
+
+    // change the color of welcome section 
+    function flashFunc() {
+        var f = document.getElementById('welcome-last');
+        var spans = f.getElementsByTagName("span");
+        
+        for (var i = 0; i < spans.length; i++) {
+            console.log(i)
+        spans[i].style.color = myColTbl[myColCnt];
+        }
+        myColCnt = ( myColCnt < myColTbl.length -1 ) ? myColCnt + 1 : 0;
+    }
+    setInterval(function() {
+        flashFunc()
+    }, 1000);
+
     $('#welcome-section > span').each(function (i) {
         $(this).css('opacity', '1');
         str[i] = $(this).text();
@@ -21,6 +40,7 @@ $(document).ready(function () {
                 $(self).append('</br></br>');
             }
         }, 50);
+        
     });
 
     // hide the humbergur menu
