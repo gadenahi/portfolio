@@ -10,19 +10,19 @@ $(document).ready(function () {
     var myColCnt = 0;
 
     // change the color of welcome section 
-    function flashFunc() {
-        var f = document.getElementById('welcome-last');
-        var spans = f.getElementsByTagName("span");
+    // function flashFunc() {
+    //     var f = document.getElementById('welcome-last');
+    //     var spans = f.getElementsByTagName("span");
         
-        for (var i = 0; i < spans.length; i++) {
-            console.log(i)
-        spans[i].style.color = myColTbl[myColCnt];
-        }
-        myColCnt = ( myColCnt < myColTbl.length -1 ) ? myColCnt + 1 : 0;
-    }
-    setInterval(function() {
-        flashFunc()
-    }, 1000);
+    //     for (var i = 0; i < spans.length; i++) {
+    //         console.log(i)
+    //     spans[i].style.color = myColTbl[myColCnt];
+    //     }
+    //     myColCnt = ( myColCnt < myColTbl.length -1 ) ? myColCnt + 1 : 0;
+    // }
+    // setInterval(function() {
+    //     flashFunc()
+    // }, 1000);
 
     $('#welcome-section > span').each(function (i) {
         $(this).css('opacity', '1');
