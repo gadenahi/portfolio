@@ -6,23 +6,20 @@ $(document).ready(function () {
     var DELAY_SPEED = 50;
     var FADE_SPEED = 100;
     var str = [];
-    var myColTbl = ["#FF0000","#0000FF","#00FF00","#FF00FF","#00FFFF","#FFFF00","#000000","#FFFFFF"]
+    var myColTbl = ["#FF0000","#0000FF","#00FF00","#FF00FF","#00FFFF","#FFFF00","#000000","#FFFFFF", "#00008B"]
     var myColCnt = 0;
+    var flashColorState 
 
     // change the color of welcome section 
-    // function flashFunc() {
-    //     var f = document.getElementById('welcome-last');
-    //     var spans = f.getElementsByTagName("span");
+    function flashFunc() {
+        var f = document.getElementById('welcome-last');
+        var spans = f.getElementsByTagName("span");
         
-    //     for (var i = 0; i < spans.length; i++) {
-    //         console.log(i)
-    //     spans[i].style.color = myColTbl[myColCnt];
-    //     }
-    //     myColCnt = ( myColCnt < myColTbl.length -1 ) ? myColCnt + 1 : 0;
-    // }
-    // setInterval(function() {
-    //     flashFunc()
-    // }, 1000);
+        for (var i = 0; i < spans.length; i++) {
+        spans[i].style.color = myColTbl[myColCnt];
+        }
+        myColCnt = ( myColCnt < myColTbl.length -1 ) ? myColCnt + 1 : 0;
+    }
 
     $('#welcome-section > span').each(function (i) {
         $(this).css('opacity', '1');
@@ -40,24 +37,60 @@ $(document).ready(function () {
                 $(self).append('</br></br>');
             }
         }, 50);
-        
     });
 
+    // Flashtimer ON 
+    var flashTimer = setInterval(function () {
+        flashFunc()
+    }, 1000);    
+    flashColorState = "ON"
+
+    // Scroll to enable fadein and change color of welcome words
+    $(window).scroll(function () {
+        const wHeight = $(window).height()  // height of window
+        const scrollAmount = $(window).scrollTop()  // Location of the scroll 
+        $('.fadeIn').each(function () {
+            const targetFadein = $(this).offset().top;  // location of target fadein
+            // console.log(scrollAmount, targetFadein-wHeight+60)
+            if (scrollAmount > targetFadein - wHeight + 60) {
+                // console.log(this)
+                $(this).addClass('scrollin')
+            } else {
+                $(this).removeClass('scrollin')
+            }           
+        })
+
+        var targetWLast = $('#welcome-last').offset().top;  // location of target Welcome last phrase
+        if (scrollAmount > targetWLast) {
+            clearInterval(flashTimer)
+            flashColorState = "OFF"
+        } else {
+            if (flashColorState === "OFF") {
+                flashTimer = setInterval(function () {
+                    flashFunc()
+                }, 1000);    
+                flashColorState = "ON"   
+            }
+        }
+    })
+
+    //To use the filter of the projects, scrollreveal doesn't work 
+
+    //parameter of animation
+    // var ani = {
+    //     delay: 200,
+    //     distance: '200px',
+    //     origin: 'bottom'
+    // };
+
+    // var scrollClass = '.fadeIn'
+    // var scrollreveal = $(function () {
+    //     ScrollReveal({ reset: false, moblie: true }).reveal(scrollClass, ani);
+    // })
+    
     // hide the humbergur menu
     $(".navbar-nav li a").click(function (event) {
         $(".navbar-collapse").collapse('hide');
-    })
-
-    //parameter of animation
-    var ani = {
-        delay: 200,
-        distance: '200px',
-        origin: 'bottom'
-    };
-
-    var scrollClass = '.fadeIn'
-    $(function () {
-        ScrollReveal({ reset: false, moblie: true }).reveal(scrollClass, ani);
     })
     
     // loop for project filters
@@ -66,7 +99,7 @@ $(document).ready(function () {
             .appendTo('.project-btns')
     });
 
-    // loopp for projects
+    // loop for projects
     $.each(projects, function (idx, obj) {
         $('<div id=project'+ obj.id +' class="project fadeIn" >' +
             '<a href=""><img class=project-pic src="" alt=project-picture>' +
@@ -76,7 +109,6 @@ $(document).ready(function () {
             .find('.caption').html(obj.caption.replace(/\n/g, '<br>')).end()
             .appendTo('#projects')
         $('#project' + obj.id).attr('data-category', '['+obj.langs+']' )
-
     });
 
     // loop for skills
@@ -88,10 +120,7 @@ $(document).ready(function () {
     
     // filter function
     var $btn = $('.project-filter')
-     
     $btn.on('click', function(e) {
-      e.preventDefault();
-       
       var btnTxt = $(this).attr('data-filter');
       var pro = $('.project')
         $.each(pro, function (i, e) {
@@ -99,7 +128,7 @@ $(document).ready(function () {
             if (btnTxt == 'all') {
                 $(e).addClass('animate').fadeIn()
             } else {
-                $(e).fadeIn()
+                $(e).fadeIn()  // to show element before fadeout
                 if (data_category.indexOf(btnTxt) === -1) {
                     $(e).addClass('animate').fadeOut()
                 }
