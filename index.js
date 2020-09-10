@@ -1,4 +1,4 @@
-import { project_filters, projects, skills } from './data.js'
+import { project_filters, projects, skills, certificate_filters, org_filters, certificates } from './data.js'
 
 // show each word in the welcome section
 
@@ -6,19 +6,63 @@ $(document).ready(function () {
     var DELAY_SPEED = 50;
     var FADE_SPEED = 100;
     var str = [];
-    var myColTbl = ["#FF0000","#0000FF","#00FF00","#FF00FF","#00FFFF","#FFFF00","#000000","#FFFFFF", "#00008B"]
+    var myColTbl = ["#FF0000", "#0000FF", "#00FF00", "#FF00FF", "#00FFFF", "#FFFF00", "#000000", "#FFFFFF", "#00008B"]
     var myColCnt = 0;
-    var flashColorState 
+    var flashColorState
+
+    // loop for project filters
+    $.each(project_filters, function (idx, obj) {
+        $('<button class="project-filter btns-filter" data-filter=' + obj + '>' + obj + '</button>')
+            .appendTo('.project-btns')
+    });
+
+    // loop for projects
+    $.each(projects, function (idx, obj) {
+        $('<div id=project' + obj.id + ' class="project fadeIn" >' +
+            '<a href=""><img class=project-pic src="" alt=project-picture>' +
+            '<div class="mask"><div class="caption"></div></div></a></div>')
+            .find('a').attr('href', obj.url).end()
+            .find('img').attr('src', obj.image).end()
+            .find('.caption').html(obj.caption.replace(/\n/g, '<br>')).end()
+            .appendTo('#projects')
+        $('#project' + obj.id).attr('data-category', '[' + obj.langs + ']')
+    });
+
+    // loop for skills
+    $.each(skills, function (idx, obj) {
+        $('<div class="skill fadeIn">' + obj + '</div>')
+            .appendTo('#skills')
+    });
+
+    // loop for certificate filters
+    $.each(certificate_filters, function (idx, obj) {
+        $('<button class="certificate-filter btns-filter" data-filter=' + obj + '>' + obj + '</button>')
+            .appendTo('.certificate-btns')
+    });
+    // loop for org filters
+    $.each(org_filters, function (idx, obj) {
+        $('<button class="certificate-filter btns-filter ' + obj + '" data-filter=' + obj + '>' + obj + '</button>')
+            .appendTo('.org-btns')
+    });
+
+    // loop for certificates
+    $.each(certificates, function (idx, obj) {
+        $('<a id=certificate' + obj.id +
+            ' class="certificate fadeIn ' + obj.org +
+            '" href="' + obj.url + '">' + obj.caption + '</a>')
+            .appendTo('#certificates')
+        $('#certificate' + obj.id).attr('data-category', '[' + obj.category + ']')
+    });
 
     // change the color of welcome section 
     function flashFunc() {
         var f = document.getElementById('welcome-last');
         var spans = f.getElementsByTagName("span");
-        
+
         for (var i = 0; i < spans.length; i++) {
-        spans[i].style.color = myColTbl[myColCnt];
+            spans[i].style.color = myColTbl[myColCnt];
         }
-        myColCnt = ( myColCnt < myColTbl.length -1 ) ? myColCnt + 1 : 0;
+        myColCnt = (myColCnt < myColTbl.length - 1) ? myColCnt + 1 : 0;
     }
 
     $('#welcome-section > span').each(function (i) {
@@ -42,7 +86,7 @@ $(document).ready(function () {
     // Flashtimer ON 
     var flashTimer = setInterval(function () {
         flashFunc()
-    }, 1000);    
+    }, 1000);
     flashColorState = "ON"
 
     // Scroll to enable fadein and change color of welcome words
@@ -51,13 +95,11 @@ $(document).ready(function () {
         const scrollAmount = $(window).scrollTop()  // Location of the scroll 
         $('.fadeIn').each(function () {
             const targetFadein = $(this).offset().top;  // location of target fadein
-            // console.log(scrollAmount, targetFadein-wHeight+60)
             if (scrollAmount > targetFadein - wHeight + 60) {
-                // console.log(this)
                 $(this).addClass('scrollin')
             } else {
                 $(this).removeClass('scrollin')
-            }           
+            }
         })
 
         var targetWLast = $('#welcome-last').offset().top;  // location of target Welcome last phrase
@@ -68,62 +110,41 @@ $(document).ready(function () {
             if (flashColorState === "OFF") {
                 flashTimer = setInterval(function () {
                     flashFunc()
-                }, 1000);    
-                flashColorState = "ON"   
+                }, 1000);
+                flashColorState = "ON"
             }
         }
     })
 
-    //To use the filter of the projects, scrollreveal doesn't work 
-
-    //parameter of animation
-    // var ani = {
-    //     delay: 200,
-    //     distance: '200px',
-    //     origin: 'bottom'
-    // };
-
-    // var scrollClass = '.fadeIn'
-    // var scrollreveal = $(function () {
-    //     ScrollReveal({ reset: false, moblie: true }).reveal(scrollClass, ani);
-    // })
-    
     // hide the humbergur menu
     $(".navbar-nav li a").click(function (event) {
         $(".navbar-collapse").collapse('hide');
     })
-    
-    // loop for project filters
-    $.each(project_filters, function (idx, obj) {
-        $('<button class="project-filter" data-filter='+obj+'>'+obj+'</button>')
-            .appendTo('.project-btns')
-    });
 
-    // loop for projects
-    $.each(projects, function (idx, obj) {
-        $('<div id=project'+ obj.id +' class="project fadeIn" >' +
-            '<a href=""><img class=project-pic src="" alt=project-picture>' +
-            '<div class="mask"><div class="caption"></div></div></a></div>')
-            .find('a').attr('href', obj.url).end()
-            .find('img').attr('src', obj.image).end()
-            .find('.caption').html(obj.caption.replace(/\n/g, '<br>')).end()
-            .appendTo('#projects')
-        $('#project' + obj.id).attr('data-category', '['+obj.langs+']' )
-    });
-
-    // loop for skills
-    $.each(skills, function (idx, obj) {
-        $('<div class="skill fadeIn">'+obj+'</div>')
-            .appendTo('#skills')
-    });
-
-    
-    // filter function
-    var $btn = $('.project-filter')
-    $btn.on('click', function(e) {
-      var btnTxt = $(this).attr('data-filter');
-      var pro = $('.project')
+    // Project filter function
+    var $proBtn = $('.project-filter')
+    $proBtn.on('click', function (e) {
+        var btnTxt = $(this).attr('data-filter');
+        var pro = $('.project')
         $.each(pro, function (i, e) {
+            var data_category = $(e).data('category')
+            if (btnTxt == 'all') {
+                $(e).addClass('animate').fadeIn()
+            } else {
+                $(e).fadeIn()  // to show element before fadeout
+                if (data_category.indexOf(btnTxt) === -1) {
+                    $(e).addClass('animate').fadeOut()
+                }
+            }
+        })
+    });
+
+    // Certificate filter function
+    var $cerBtn = $('.certificate-filter')
+    $cerBtn.on('click', function (e) {
+        var btnTxt = $(this).attr('data-filter');
+        var cer = $('.certificate')
+        $.each(cer, function (i, e) {
             var data_category = $(e).data('category')
             if (btnTxt == 'all') {
                 $(e).addClass('animate').fadeIn()
