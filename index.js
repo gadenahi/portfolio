@@ -1,7 +1,5 @@
 import { project_filters, projects, skills, certificate_filters, org_filters, certificates } from './data.js'
 
-// show each word in the welcome section
-
 $(document).ready(function () {
     var DELAY_SPEED = 50;
     var FADE_SPEED = 100;
@@ -54,17 +52,7 @@ $(document).ready(function () {
         $('#certificate' + obj.id).attr('data-category', '[' + obj.category + ']')
     });
 
-    // change the color of welcome section 
-    function flashFunc() {
-        var f = document.getElementById('welcome-last');
-        var spans = f.getElementsByTagName("span");
-
-        for (var i = 0; i < spans.length; i++) {
-            spans[i].style.color = myColTbl[myColCnt];
-        }
-        myColCnt = (myColCnt < myColTbl.length - 1) ? myColCnt + 1 : 0;
-    }
-
+    // show the each words
     $('#welcome-section > span').each(function (i) {
         $(this).css('opacity', '1');
         str[i] = $(this).text();
@@ -82,6 +70,17 @@ $(document).ready(function () {
             }
         }, 50);
     });
+
+    // change the color of welcome section 
+    function flashFunc() {
+        var f = document.getElementById('welcome-last');
+        var spans = f.getElementsByTagName("span");
+
+        for (var i = 0; i < spans.length; i++) {
+            spans[i].style.color = myColTbl[myColCnt];
+        }
+        myColCnt = (myColCnt < myColTbl.length - 1) ? myColCnt + 1 : 0;
+    }
 
     // Flashtimer ON 
     var flashTimer = setInterval(function () {
@@ -102,7 +101,7 @@ $(document).ready(function () {
             }
         })
 
-        var targetWLast = $('#welcome-last').offset().top;  // location of target Welcome last phrase
+        const targetWLast = $('#welcome-last').offset().top;  // location of target Welcome last phrase
         if (scrollAmount > targetWLast) {
             clearInterval(flashTimer)
             flashColorState = "OFF"
@@ -122,39 +121,35 @@ $(document).ready(function () {
     })
 
     // Project filter function
+    function filterBtn(targetFilter, btnTxt) {
+        $.each(targetFilter, function (i, e) {
+            var data_category = $(e).data('category')
+            if (btnTxt == 'all') {
+                $(e).addClass('animate').fadeIn()
+            } else {
+                $(e).fadeIn()  // to show element before fadeout
+                if (data_category.indexOf(btnTxt) === -1) {
+                    $(e).addClass('animate').fadeOut()
+                    console.log("success")
+                }
+            }
+        })
+    }
+
+    // Action when click btn of project filter
     var $proBtn = $('.project-filter')
     $proBtn.on('click', function (e) {
         var btnTxt = $(this).attr('data-filter');
-        var pro = $('.project')
-        $.each(pro, function (i, e) {
-            var data_category = $(e).data('category')
-            if (btnTxt == 'all') {
-                $(e).addClass('animate').fadeIn()
-            } else {
-                $(e).fadeIn()  // to show element before fadeout
-                if (data_category.indexOf(btnTxt) === -1) {
-                    $(e).addClass('animate').fadeOut()
-                }
-            }
-        })
+        var target = $('.project')
+        filterBtn(target, btnTxt)
     });
 
-    // Certificate filter function
+    // Action when click btn of certificate filter
     var $cerBtn = $('.certificate-filter')
     $cerBtn.on('click', function (e) {
         var btnTxt = $(this).attr('data-filter');
-        var cer = $('.certificate')
-        $.each(cer, function (i, e) {
-            var data_category = $(e).data('category')
-            if (btnTxt == 'all') {
-                $(e).addClass('animate').fadeIn()
-            } else {
-                $(e).fadeIn()  // to show element before fadeout
-                if (data_category.indexOf(btnTxt) === -1) {
-                    $(e).addClass('animate').fadeOut()
-                }
-            }
-        })
+        var target = $('.certificate')
+        filterBtn(target, btnTxt)
     });
 });
 
