@@ -283,6 +283,41 @@ footer a {
 	transform : translate(0, 0);
 	}
 
+  #pagetop{
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    right: 25px;
+    bottom: 50px;
+    background: darkblue;
+    opacity: 0.6;
+    border-radius: 50%;
+  }
+  
+  #pagetop a{
+    position: relative;
+    display: block;
+    width: 50px;
+    height: 50px;
+    text-decoration: none;
+    text-align: center;
+  }
+
+  #pagetop a::before{
+    font-family: "Font Awesome 5 Free";
+    content: '\f102';
+    font-weight: 900;
+    font-size: 25px;
+    color: #fff;
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: 0px;
+    bottom: 10px;
+    right: 0;
+    left: 0;
+    margin: auto;
+  }
 
 @media (max-width: 770px){
   #welcome-section {

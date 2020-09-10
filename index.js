@@ -55,9 +55,9 @@ $(document).ready(function () {
     // show the each words
     $('#welcome-section > span').each(function (i) {
         $(this).css('opacity', '1');
-        str[i] = $(this).text();
-        $(this).text('');
-        var no = i;
+        str[i] = $(this).text();  // To get the text from span in welcome section
+        $(this).text('');  // clear text in span of welcome section
+        var no = i;  // span #
         var self = this;
         var interval = setInterval(function () {
             if (no == 0 || $('#welcome-section > span').eq(no - 1).children('span:last').css('opacity') == 1) {
@@ -88,7 +88,10 @@ $(document).ready(function () {
     }, 1000);
     flashColorState = "ON"
 
-    // Scroll to enable fadein and change color of welcome words
+    // Scroll to enable fadein, change color of welcome words and to show pagetop
+    const targetPageTop = $('#pagetop')
+    targetPageTop.hide()  // hide pagetop at default
+
     $(window).scroll(function () {
         const wHeight = $(window).height()  // height of window
         const scrollAmount = $(window).scrollTop()  // Location of the scroll 
@@ -105,7 +108,9 @@ $(document).ready(function () {
         if (scrollAmount > targetWLast) {
             clearInterval(flashTimer)
             flashColorState = "OFF"
+            targetPageTop.fadeIn()
         } else {
+            targetPageTop.fadeOut()
             if (flashColorState === "OFF") {
                 flashTimer = setInterval(function () {
                     flashFunc()
@@ -114,6 +119,12 @@ $(document).ready(function () {
             }
         }
     })
+
+    // scrollup animation 
+    targetPageTop.click(function () {
+        $('body, html').animate({ scrollTop: 0 }, 500);
+        return false;
+     });
 
     // hide the humbergur menu
     $(".navbar-nav li a").click(function (event) {
