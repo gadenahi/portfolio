@@ -206,6 +206,10 @@ margin-top: -40px;
   color:black;
 }
 
+.hackerrank {
+  background-color: #169016
+}
+
 .ibm {
   background-color: black
 }
@@ -215,7 +219,7 @@ margin-top: -40px;
 }
 
 .freecodecamp {
-  background-color: darkgreen
+  background-color: rgb(27,27,50)
 }
 
 #contact {

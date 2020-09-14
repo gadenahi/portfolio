@@ -154,9 +154,16 @@ const skills = ["python", "flask", "javascript", "react", "redux", "node", "expr
 
 const certificate_filters = ["all", "fullstack", "datascience", "python", "javascript", "sql", "bigquery", "ibmcloud", "googlecloud"]
 
-const org_filters = ["ibm", "freecodecamp", "google"]
+const org_filters = ["hackerrank", "ibm", "freecodecamp", "google"]
 
 const certificates = [
+    {
+        id : 31,
+        org: "hackerrank",
+        url: "https://www.hackerrank.com/certificates/f93bcd6d09f9",
+        caption: "Python (Advanced) Certificate",
+        category: ["python", "hackerrank"]
+    },
     {
         id : 30,
         org: "ibm",
