@@ -23,7 +23,7 @@ $(document).ready(function () {
             .find('img').attr('src', obj.image).end()
             .find('.caption').html(obj.caption.replace(/\n/g, '<br>')).end()
             .appendTo('#projects')
-        $('#project' + obj.id).attr('data-category', '[' + obj.langs + ']')
+        $('#project' + obj.id).attr('data-category', '[' + obj.category + ']')
     });
 
     // loop for skills
