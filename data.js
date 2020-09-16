@@ -350,14 +350,14 @@ const certificates = [
         id: 5,
         org: "google",
         url: "https://www.coursera.org/account/accomplishments/certificate/L2TV2QZNRXVA",
-        caption: "Exploring and Preparing your Data with BigQuery",
+        caption: "Exploring/Preparing your Data with BigQuery",
         category: ["datascience", "bigquery", "sql", "googlecloud", "google"]
     },
     {
         id: 4,
         org: "google",
         url: "https://www.coursera.org/account/accomplishments/certificate/ZTPBMTNFLWEY",
-        caption: "Creating New BgiQuery Datasets and Visualizing Insights",
+        caption: "Creating New BgiQuery Datasets/Visualizing Insights",
         category: ["datascience", "bigquery", "sql", "googlecloud", "google"]
     },
     {
@@ -378,7 +378,7 @@ const certificates = [
         id: 1,
         org: "google",
         url: "https://www.coursera.org/account/accomplishments/certificate/RB5TLSQR7MAH",
-        caption: "Fundamentals for Azure Professionals: Core Infrastructure",
+        caption: "Fundamentals for Azure Pro.: Core Infrastructure",
         category: ["googlecloud", "google"]
     }
 ]

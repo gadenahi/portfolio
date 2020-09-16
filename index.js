@@ -141,7 +141,6 @@ $(document).ready(function () {
                 $(e).fadeIn()  // to show element before fadeout
                 if (data_category.indexOf(btnTxt) === -1) {
                     $(e).addClass('animate').fadeOut()
-                    console.log("success")
                 }
             }
         })
