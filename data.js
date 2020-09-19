@@ -3,7 +3,7 @@ const project_filters = ["all", "python", "flask", "javascript", "node", "expres
 const projects = [
     {
         id: 22,
-        url: "http://localhost:3000/pf/",
+        url: "https://gadenahi.github.io/pf/",
         image: "./static/portfolio.png",
         caption: "Personal Portfolio",
         category: ["javascript", "react"]
